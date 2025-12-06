@@ -49,9 +49,9 @@ export function ProductGrid() {
             <div className="flex justify-end">
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <button className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white border-2 border-gray-200 hover:border-gray-900 transition-all duration-300 shadow-md hover:shadow-lg">
+                        <button className="flex items-center gap-2 px-5 py-3 rounded-lg bg-white border-2 border-gray-200 hover:border-gray-900 transition-all duration-300 shadow-md hover:shadow-lg min-h-[48px]">
                             <Filter className="h-5 w-5 text-black" />
-                            <span className="font-semibold text-black">{selectedCategoryName}</span>
+                            <span className="font-semibold text-black text-sm sm:text-base">{selectedCategoryName}</span>
                         </button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-48 bg-white border-2 border-gray-200 shadow-xl">

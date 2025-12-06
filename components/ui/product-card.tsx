@@ -32,7 +32,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 />
                 {product.featured && (
                     <div className="absolute top-3 right-3 z-10">
-                        <span className="inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs font-semibold text-white shadow-lg">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-black px-3 py-1.5 text-xs font-semibold text-white shadow-lg">
                             <Sparkles className="h-3 w-3" />
                             Featured
                         </span>
@@ -41,17 +41,17 @@ export function ProductCard({ product }: ProductCardProps) {
             </div>
 
             {/* Product Info */}
-            <div className="p-4 space-y-3">
+            <div className="p-5 space-y-3">
                 <div>
                     <h3 className="font-semibold text-black text-lg line-clamp-1">
                         {product.name}
                     </h3>
-                    <p className="text-sm text-gray-600 line-clamp-2 mt-1">
+                    <p className="text-sm text-gray-600 line-clamp-2 mt-1.5">
                         {product.description}
                     </p>
                 </div>
 
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center justify-between gap-3">
                     <span className="text-2xl font-bold text-black">
                         ${product.price}
                     </span>
@@ -60,7 +60,7 @@ export function ProductCard({ product }: ProductCardProps) {
                         onClick={handleAddToCart}
                         disabled={!product.inStock || isAdding}
                         className={cn(
-                            "relative overflow-hidden bg-black hover:bg-gray-800 text-white border-0 shadow-lg transition-all duration-300",
+                            "relative overflow-hidden bg-black hover:bg-gray-800 text-white border-0 shadow-lg transition-all duration-300 min-h-[44px] px-5",
                             isAdding && "scale-95"
                         )}
                         size="sm"
