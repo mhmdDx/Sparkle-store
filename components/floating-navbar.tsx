@@ -19,7 +19,7 @@ export function FloatingNavbar() {
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 px-2 py-2 sm:px-4 sm:py-4">
-      <div className="mx-auto max-w-7xl rounded-2xl border-2 border-gray-200 bg-white/90 px-3 py-2 sm:px-6 sm:py-4 backdrop-blur-sm shadow-lg">
+      <div className="mx-auto max-w-7xl rounded-2xl border-2 border-gray-200 bg-white/90 px-3 py-2 sm:px-6 sm:py-4 backdrop-blur-[2px] sm:backdrop-blur-sm shadow-lg">
         <div className="relative flex items-center justify-between h-12">
           {/* Left: Desktop Navigation Links & Mobile Menu */}
           <div className="flex items-center gap-6">
@@ -82,7 +82,7 @@ export function FloatingNavbar() {
               onClick={() => setIsOpen(true)}
               className="relative bg-black hover:bg-gray-800 text-white border-0 shadow-lg"
             >
-              <ShoppingCart className="h-4 w-4 mr-2"  />
+              <ShoppingCart className="h-4 w-4 mr-2" />
               <span className="hidden sm:inline">Cart</span>
               {totalItems > 0 && (
                 <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-gray-900 text-xs font-bold text-white">

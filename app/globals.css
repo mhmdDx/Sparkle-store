@@ -128,11 +128,11 @@
   }
 
   html {
-    @apply overflow-x-hidden;
+    @apply overflow-x-hidden overscroll-y-none;
   }
 
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply bg-background text-foreground overflow-x-hidden overscroll-y-none;
   }
 
   .font-open-sans-custom {

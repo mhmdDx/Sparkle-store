@@ -32,96 +32,9 @@ export default function Home() {
     const scrollContainer = scrollContainerRef.current
     if (!scrollContainer) return
 
-    // Detect if device is touch-enabled (mobile/tablet)
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    // Custom touch handling removed to restore native fluidity
+    // standard horizontal scroll will be handled by CSS snap
 
-    if (isTouchDevice) {
-      // On mobile, handle touch events for vertical-to-horizontal scroll
-      let touchStartY = 0
-      let touchStartX = 0
-      let isScrolling = false
-
-      const handleTouchStart = (e: TouchEvent) => {
-        touchStartY = e.touches[0].clientY
-        touchStartX = e.touches[0].clientX
-        isScrolling = false
-      }
-
-      const handleTouchMove = (e: TouchEvent) => {
-        if (isScrolling) return
-
-        const touchY = e.touches[0].clientY
-        const touchX = e.touches[0].clientX
-        const deltaY = touchStartY - touchY
-        const deltaX = touchStartX - touchX
-
-        // If horizontal swipe is dominant, allow native horizontal scroll
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-          return
-        }
-
-        // Vertical swipe - convert to horizontal navigation
-        const currentScroll = scrollContainer.scrollLeft
-        const containerWidth = scrollContainer.offsetWidth
-        const currentSection = Math.round(currentScroll / containerWidth)
-
-        // Check if we're in a section with vertical content
-        let shouldNavigate = false
-
-        if (currentSection === 1 && productsSectionRef.current) {
-          const productsSection = productsSectionRef.current
-          const isAtTop = productsSection.scrollTop <= 10
-          const isAtBottom = productsSection.scrollTop + productsSection.clientHeight >= productsSection.scrollHeight - 10
-
-          if (deltaY > 50 && isAtBottom) {
-            shouldNavigate = true
-            scrollContainer.scrollTo({ left: 2 * containerWidth, behavior: "smooth" })
-          } else if (deltaY < -50 && isAtTop) {
-            shouldNavigate = true
-            scrollContainer.scrollTo({ left: 0 * containerWidth, behavior: "smooth" })
-          }
-        } else if (currentSection === 2 && aboutSectionRef.current) {
-          const aboutSection = aboutSectionRef.current
-          const isAtTop = aboutSection.scrollTop <= 10
-          const isAtBottom = aboutSection.scrollTop + aboutSection.clientHeight >= aboutSection.scrollHeight - 10
-
-          if (deltaY > 50 && isAtBottom) {
-            shouldNavigate = true
-            scrollContainer.scrollTo({ left: 3 * containerWidth, behavior: "smooth" })
-          } else if (deltaY < -50 && isAtTop) {
-            shouldNavigate = true
-            scrollContainer.scrollTo({ left: 1 * containerWidth, behavior: "smooth" })
-          }
-        } else if (currentSection === 3 && contactSectionRef.current) {
-          const contactSection = contactSectionRef.current
-          const isAtTop = contactSection.scrollTop <= 10
-
-          if (deltaY < -50 && isAtTop) {
-            shouldNavigate = true
-            scrollContainer.scrollTo({ left: 2 * containerWidth, behavior: "smooth" })
-          }
-        } else if (currentSection === 0) {
-          // Home section - navigate on vertical swipe
-          if (deltaY > 50) {
-            shouldNavigate = true
-            scrollContainer.scrollTo({ left: 1 * containerWidth, behavior: "smooth" })
-          }
-        }
-
-        if (shouldNavigate) {
-          isScrolling = true
-          e.preventDefault()
-        }
-      }
-
-      scrollContainer.addEventListener("touchstart", handleTouchStart, { passive: true })
-      scrollContainer.addEventListener("touchmove", handleTouchMove, { passive: false })
-
-      return () => {
-        scrollContainer.removeEventListener("touchstart", handleTouchStart)
-        scrollContainer.removeEventListener("touchmove", handleTouchMove)
-      }
-    }
 
     // Desktop: use wheel events
     const handleWheel = (e: WheelEvent) => {
@@ -263,7 +176,7 @@ export default function Home() {
           }
         `}</style>
 
-        <section id="home" className="flex min-w-full snap-start items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-12 sm:pt-40 lg:pt-48">
+        <section id="home" className="flex min-w-full snap-start items-center justify-center px-6 sm:px-6 lg:px-8 pt-36 pb-16 sm:pt-40 lg:pt-48">
           <div className="mx-auto max-w-4xl w-full">
             <div className="text-center px-0 leading-5">
 
@@ -340,7 +253,7 @@ export default function Home() {
         <section
           id="products"
           ref={productsSectionRef}
-          className="relative min-w-full snap-start overflow-y-auto px-4 pt-24 sm:pt-32 pb-20 [&::-webkit-scrollbar]:hidden"
+          className="relative min-w-full snap-start overflow-y-auto px-6 pt-28 sm:pt-32 pb-24 [&::-webkit-scrollbar]:hidden"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <div
@@ -375,7 +288,7 @@ export default function Home() {
         <section
           id="about"
           ref={aboutSectionRef}
-          className="relative min-w-full snap-start overflow-y-auto px-4 sm:px-6 pt-20 sm:pt-32 pb-16 sm:pb-20 [&::-webkit-scrollbar]:hidden"
+          className="relative min-w-full snap-start overflow-y-auto px-6 sm:px-6 pt-24 sm:pt-32 pb-20 sm:pb-20 [&::-webkit-scrollbar]:hidden"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <div
@@ -511,7 +424,7 @@ export default function Home() {
         <section
           id="contact"
           ref={contactSectionRef}
-          className="relative min-w-full snap-start overflow-y-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20 mt-10"
+          className="relative min-w-full snap-start overflow-y-auto px-6 sm:px-6 pt-28 sm:pt-32 pb-20 sm:pb-20 mt-10"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <div
