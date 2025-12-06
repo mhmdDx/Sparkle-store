@@ -80,37 +80,25 @@ export default function Home() {
             shouldNavigate = true
             scrollContainer.scrollTo({ left: 0 * containerWidth, behavior: "smooth" })
           }
-        } else if (currentSection === 2 && categoriesSectionRef.current) {
-          const categoriesSection = categoriesSectionRef.current
-          const isAtTop = categoriesSection.scrollTop <= 10
-          const isAtBottom = categoriesSection.scrollTop + categoriesSection.clientHeight >= categoriesSection.scrollHeight - 10
-
-          if (deltaY > 150 && isAtBottom) {
-            shouldNavigate = true
-            scrollContainer.scrollTo({ left: 3 * containerWidth, behavior: "smooth" })
-          } else if (deltaY < -150 && isAtTop) {
-            shouldNavigate = true
-            scrollContainer.scrollTo({ left: 1 * containerWidth, behavior: "smooth" })
-          }
-        } else if (currentSection === 3 && aboutSectionRef.current) {
+        } else if (currentSection === 2 && aboutSectionRef.current) {
           const aboutSection = aboutSectionRef.current
           const isAtTop = aboutSection.scrollTop <= 10
           const isAtBottom = aboutSection.scrollTop + aboutSection.clientHeight >= aboutSection.scrollHeight - 10
 
           if (deltaY > 200 && isAtBottom) {
             shouldNavigate = true
-            scrollContainer.scrollTo({ left: 4 * containerWidth, behavior: "smooth" })
+            scrollContainer.scrollTo({ left: 3 * containerWidth, behavior: "smooth" })
           } else if (deltaY < -200 && isAtTop) {
             shouldNavigate = true
-            scrollContainer.scrollTo({ left: 2 * containerWidth, behavior: "smooth" })
+            scrollContainer.scrollTo({ left: 1 * containerWidth, behavior: "smooth" })
           }
-        } else if (currentSection === 4 && contactSectionRef.current) {
+        } else if (currentSection === 3 && contactSectionRef.current) {
           const contactSection = contactSectionRef.current
           const isAtTop = contactSection.scrollTop <= 10
 
           if (deltaY < -150 && isAtTop) {
             shouldNavigate = true
-            scrollContainer.scrollTo({ left: 3 * containerWidth, behavior: "smooth" })
+            scrollContainer.scrollTo({ left: 2 * containerWidth, behavior: "smooth" })
           }
         } else if (currentSection === 0) {
           // Home section - navigate on vertical swipe
@@ -174,10 +162,10 @@ export default function Home() {
         }
       }
 
-      if (currentSection === 2 && categoriesSectionRef.current) {
-        const categoriesSection = categoriesSectionRef.current
-        const isAtTop = categoriesSection.scrollTop <= 5
-        const isAtBottom = categoriesSection.scrollTop + categoriesSection.clientHeight >= categoriesSection.scrollHeight - 5
+      if (currentSection === 2 && aboutSectionRef.current) {
+        const aboutSection = aboutSectionRef.current
+        const isAtTop = aboutSection.scrollTop <= 5
+        const isAtBottom = aboutSection.scrollTop + aboutSection.clientHeight >= aboutSection.scrollHeight - 5
 
         if (delta > 0 && !isAtBottom) {
           return
@@ -206,10 +194,10 @@ export default function Home() {
         }
       }
 
-      if (currentSection === 3 && aboutSectionRef.current) {
-        const aboutSection = aboutSectionRef.current
-        const isAtTop = aboutSection.scrollTop <= 5
-        const isAtBottom = aboutSection.scrollTop + aboutSection.clientHeight >= aboutSection.scrollHeight - 5
+      if (currentSection === 3 && contactSectionRef.current) {
+        const contactSection = contactSectionRef.current
+        const isAtTop = contactSection.scrollTop <= 5
+        const isAtBottom = contactSection.scrollTop + contactSection.clientHeight >= contactSection.scrollHeight - 5
 
         if (delta > 0 && !isAtBottom) {
           return
@@ -230,38 +218,6 @@ export default function Home() {
 
         if (delta > 0 && isAtBottom) {
           e.preventDefault()
-          scrollContainer.scrollTo({
-            left: 4 * containerWidth,
-            behavior: "smooth",
-          })
-          return
-        }
-      }
-
-      if (currentSection === 4 && contactSectionRef.current) {
-        const contactSection = contactSectionRef.current
-        const isAtTop = contactSection.scrollTop <= 5
-        const isAtBottom = contactSection.scrollTop + contactSection.clientHeight >= contactSection.scrollHeight - 5
-
-        if (delta > 0 && !isAtBottom) {
-          return
-        }
-
-        if (delta < 0 && !isAtTop) {
-          return
-        }
-
-        if (delta < 0 && isAtTop) {
-          e.preventDefault()
-          scrollContainer.scrollTo({
-            left: 3 * containerWidth,
-            behavior: "smooth",
-          })
-          return
-        }
-
-        if (delta > 0 && isAtBottom) {
-          e.preventDefault()
           return
         }
       }
@@ -271,7 +227,7 @@ export default function Home() {
       if (Math.abs(delta) > 10) {
         let targetSection = currentSection
         if (delta > 0) {
-          targetSection = Math.min(currentSection + 1, 4)
+          targetSection = Math.min(currentSection + 1, 3)
         } else {
           targetSection = Math.max(currentSection - 1, 0)
         }
@@ -307,7 +263,7 @@ export default function Home() {
           }
         `}</style>
 
-        <section id="home" className="flex min-w-full snap-start items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <section id="home" className="flex min-w-full snap-start items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-12 sm:pt-40 lg:pt-48">
           <div className="mx-auto max-w-4xl w-full">
             <div className="text-center px-0 leading-5">
 
