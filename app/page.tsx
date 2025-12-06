@@ -268,7 +268,7 @@ export default function Home() {
             <div className="text-center px-0 leading-5">
 
               <ScrollAnimation delay={0.1}>
-                <h1 className="mb-6 sm:mb-8 text-balance text-4xl sm:text-5xl md:text-6xl lg:text-8xl tracking-tight text-black font-bold">
+                <h1 className="mb-6 sm:mb-8 text-balance text-2xl sm:text-5xl md:text-6xl lg:text-8xl tracking-tight text-black font-bold">
                   <span className="font-open-sans-custom not-italic">Sparkle.</span>{" "}
                   <span className="font-serif italic">Shine.</span>{" "}
                   <span className="font-open-sans-custom not-italic">Accessories .</span>
@@ -276,7 +276,7 @@ export default function Home() {
               </ScrollAnimation>
 
               <ScrollAnimation delay={0.2}>
-                <p className="mb-6 sm:mb-8 mx-auto max-w-2xl text-pretty leading-relaxed text-gray-700 font-light tracking-wide text-base sm:text-lg lg:text-xl px-4 sm:px-0">
+                <p className="mb-6 sm:mb-8 mx-auto max-w-2xl text-pretty leading-relaxed text-gray-700 font-light tracking-wide text-xs sm:text-lg lg:text-xl px-4 sm:px-0">
                   Discover the perfect accessories to express your unique style. From{" "}
                   <span className="font-serif italic text-gray-900">sparkling jewelry</span> to trendy bags,
                   find everything you need to shine bright!
@@ -285,7 +285,7 @@ export default function Home() {
 
               <ScrollAnimation delay={0.3}>
                 <div className="flex justify-center gap-4 mb-8 sm:mb-0">
-                  <ShinyButton className="px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base bg-black text-white hover:bg-gray-800">
+                  <ShinyButton className="px-4 py-2 sm:px-8 sm:py-3 text-xs sm:text-base bg-black text-white hover:bg-gray-800">
                     Shop Now
                   </ShinyButton>
                 </div>
@@ -340,7 +340,7 @@ export default function Home() {
         <section
           id="products"
           ref={productsSectionRef}
-          className="relative min-w-full snap-start overflow-y-auto px-4 pt-32 pb-20 [&::-webkit-scrollbar]:hidden"
+          className="relative min-w-full snap-start overflow-y-auto px-4 pt-24 sm:pt-32 pb-20 [&::-webkit-scrollbar]:hidden"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <div
@@ -356,12 +356,12 @@ export default function Home() {
           <div className="relative z-10 mx-auto w-full max-w-7xl">
             <div className="mx-auto mb-10 max-w-2xl text-center">
               <ScrollAnimation>
-                <h1 className="text-4xl font-semibold tracking-tight lg:text-5xl text-black">
+                <h1 className="text-2xl font-semibold tracking-tight lg:text-5xl text-black">
                   Shop Our Collection
                 </h1>
               </ScrollAnimation>
               <ScrollAnimation delay={0.1}>
-                <p className="text-gray-700 mt-4 text-base md:text-lg leading-relaxed">
+                <p className="text-gray-700 mt-4 text-xs md:text-lg leading-relaxed">
                   Browse through our carefully curated selection of beautiful accessories for every style and occasion
                 </p>
               </ScrollAnimation>
@@ -375,7 +375,7 @@ export default function Home() {
         <section
           id="about"
           ref={aboutSectionRef}
-          className="relative min-w-full snap-start overflow-y-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20 [&::-webkit-scrollbar]:hidden"
+          className="relative min-w-full snap-start overflow-y-auto px-4 sm:px-6 pt-20 sm:pt-32 pb-16 sm:pb-20 [&::-webkit-scrollbar]:hidden"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <div
@@ -392,12 +392,12 @@ export default function Home() {
             {/* Header */}
             <div className="mx-auto mb-8 sm:mb-12 max-w-3xl text-center">
               <ScrollAnimation>
-                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight lg:text-5xl text-black mb-3 sm:mb-4">
+                <h1 className="text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl text-black mb-3 sm:mb-4">
                   Our Story
                 </h1>
               </ScrollAnimation>
               <ScrollAnimation delay={0.1}>
-                <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed px-2">
+                <p className="text-gray-700 text-xs sm:text-base md:text-lg leading-relaxed px-2">
                   Empowering girls to express their unique style with beautiful, quality accessories
                 </p>
               </ScrollAnimation>
@@ -425,11 +425,11 @@ export default function Home() {
               <div className="space-y-4 sm:space-y-6 order-2 lg:order-none">
                 {/* Mission Card */}
                 <ScrollAnimation delay={0.2} variant="slideLeft">
-                  <div className="rounded-xl sm:rounded-2xl bg-white border-2 border-gray-200 p-5 sm:p-8 shadow-lg hover:border-gray-900 transition-all duration-300">
-                    <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4">
+                  <div className="rounded-xl sm:rounded-2xl bg-white border-2 border-gray-200 p-3 sm:p-8 shadow-lg hover:border-gray-900 transition-all duration-300">
+                    <h3 className="text-lg sm:text-2xl font-bold text-black mb-3 sm:mb-4">
                       Our Mission
                     </h3>
-                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                    <p className="text-gray-700 leading-relaxed text-xs sm:text-base">
                       At Sparkle & Shine, we believe every girl deserves to feel confident and beautiful.
                       We curate the finest accessories that combine quality, style, and affordability.
                       From everyday essentials to special occasion pieces, we're here to help you shine bright!
@@ -440,13 +440,13 @@ export default function Home() {
                 {/* Values Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <ScrollAnimation delay={0.3} className="h-full">
-                    <div className="rounded-lg sm:rounded-xl bg-white border-2 border-gray-200 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-gray-900 transition-all duration-300 h-full">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center mb-3 sm:mb-4">
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="rounded-lg sm:rounded-xl bg-white border-2 border-gray-200 p-3 sm:p-6 shadow-md hover:shadow-lg hover:border-gray-900 transition-all duration-300 h-full">
+                      <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center mb-3 sm:mb-4">
+                        <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <h4 className="text-base sm:text-lg font-bold text-black mb-2">
+                      <h4 className="text-sm sm:text-lg font-bold text-black mb-2">
                         Quality First
                       </h4>
                       <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
@@ -456,13 +456,13 @@ export default function Home() {
                   </ScrollAnimation>
 
                   <ScrollAnimation delay={0.4} className="h-full">
-                    <div className="rounded-lg sm:rounded-xl bg-white border-2 border-gray-200 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-gray-900 transition-all duration-300 h-full">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center mb-3 sm:mb-4">
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="rounded-lg sm:rounded-xl bg-white border-2 border-gray-200 p-3 sm:p-6 shadow-md hover:shadow-lg hover:border-gray-900 transition-all duration-300 h-full">
+                      <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center mb-3 sm:mb-4">
+                        <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                       </div>
-                      <h4 className="text-base sm:text-lg font-bold text-black mb-2">
+                      <h4 className="text-sm sm:text-lg font-bold text-black mb-2">
                         Trendy Styles
                       </h4>
                       <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
@@ -472,13 +472,13 @@ export default function Home() {
                   </ScrollAnimation>
 
                   <ScrollAnimation delay={0.5} className="h-full">
-                    <div className="rounded-lg sm:rounded-xl bg-white border-2 border-gray-200 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-gray-900 transition-all duration-300 h-full">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center mb-3 sm:mb-4">
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="rounded-lg sm:rounded-xl bg-white border-2 border-gray-200 p-3 sm:p-6 shadow-md hover:shadow-lg hover:border-gray-900 transition-all duration-300 h-full">
+                      <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center mb-3 sm:mb-4">
+                        <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <h4 className="text-base sm:text-lg font-bold text-black mb-2">
+                      <h4 className="text-sm sm:text-lg font-bold text-black mb-2">
                         Affordable Prices
                       </h4>
                       <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
@@ -488,13 +488,13 @@ export default function Home() {
                   </ScrollAnimation>
 
                   <ScrollAnimation delay={0.6} className="h-full">
-                    <div className="rounded-lg sm:rounded-xl bg-white border-2 border-gray-200 p-5 sm:p-6 shadow-md hover:shadow-lg hover:border-gray-900 transition-all duration-300 h-full">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center mb-3 sm:mb-4">
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="rounded-lg sm:rounded-xl bg-white border-2 border-gray-200 p-3 sm:p-6 shadow-md hover:shadow-lg hover:border-gray-900 transition-all duration-300 h-full">
+                      <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center mb-3 sm:mb-4">
+                        <svg className="w-4 h-4 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
                       </div>
-                      <h4 className="text-base sm:text-lg font-bold text-black mb-2">
+                      <h4 className="text-sm sm:text-lg font-bold text-black mb-2">
                         Customer Love
                       </h4>
                       <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
@@ -528,7 +528,7 @@ export default function Home() {
             {/* Header */}
             <div className="mx-auto mb-12 sm:mb-16 max-w-3xl text-center">
               <ScrollAnimation>
-                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight lg:text-5xl text-black mb-4">
+                <h1 className="text-2xl sm:text-4xl font-bold tracking-tight lg:text-5xl text-black mb-4">
                   Get in Touch
                 </h1>
               </ScrollAnimation>
@@ -547,15 +547,15 @@ export default function Home() {
                 <div className="space-y-4">
                   {/* Email Card */}
                   <ScrollAnimation delay={0.2} variant="slideRight">
-                    <div className="group rounded-xl sm:rounded-2xl bg-white border-2 border-gray-200 p-6 shadow-lg hover:shadow-xl hover:border-gray-900 transition-all duration-300">
+                    <div className="group rounded-xl sm:rounded-2xl bg-white border-2 border-gray-200 p-3 shadow-lg hover:shadow-xl hover:border-gray-900 transition-all duration-300">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <MailIcon className="h-6 w-6 text-white" />
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <MailIcon className="h-5 w-5 text-white" />
                         </div>
                         <div className="flex-1">
                           <h3 className="text-lg font-bold text-black mb-1">Email Us</h3>
-                          <p className="text-gray-600 text-sm mb-2">Send us an email anytime</p>
-                          <a href="mailto:hello@sparkleandshine.com" className="text-black font-medium hover:underline">
+                          <p className="text-gray-600 text-xs mb-2">Send us an email anytime</p>
+                          <a href="mailto:hello@sparkleandshine.com" className="text-black font-medium hover:underline text-sm">
                             hello@sparkleandshine.com
                           </a>
                         </div>
@@ -565,15 +565,15 @@ export default function Home() {
 
                   {/* Phone Card */}
                   <ScrollAnimation delay={0.3} variant="slideRight">
-                    <div className="group rounded-xl sm:rounded-2xl bg-white border-2 border-gray-200 p-6 shadow-lg hover:shadow-xl hover:border-gray-900 transition-all duration-300">
+                    <div className="group rounded-xl sm:rounded-2xl bg-white border-2 border-gray-200 p-3 shadow-lg hover:shadow-xl hover:border-gray-900 transition-all duration-300">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <PhoneIcon className="h-6 w-6 text-white" />
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <PhoneIcon className="h-5 w-5 text-white" />
                         </div>
                         <div className="flex-1">
                           <h3 className="text-lg font-bold text-black mb-1">Call Us</h3>
-                          <p className="text-gray-600 text-sm mb-2">Mon-Fri from 9am to 6pm</p>
-                          <a href="tel:+15551234567" className="text-black font-medium hover:underline">
+                          <p className="text-gray-600 text-xs mb-2">Mon-Fri from 9am to 6pm</p>
+                          <a href="tel:+15551234567" className="text-black font-medium hover:underline text-sm">
                             +1 (555) 123-4567
                           </a>
                         </div>
@@ -583,15 +583,15 @@ export default function Home() {
 
                   {/* Address Card */}
                   <ScrollAnimation delay={0.4} variant="slideRight">
-                    <div className="group rounded-xl sm:rounded-2xl bg-white border-2 border-gray-200 p-6 shadow-lg hover:shadow-xl hover:border-gray-900 transition-all duration-300">
+                    <div className="group rounded-xl sm:rounded-2xl bg-white border-2 border-gray-200 p-3 shadow-lg hover:shadow-xl hover:border-gray-900 transition-all duration-300">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <MapPinIcon className="h-6 w-6 text-white" />
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <MapPinIcon className="h-5 w-5 text-white" />
                         </div>
                         <div className="flex-1">
                           <h3 className="text-lg font-bold text-black mb-1">Visit Us</h3>
-                          <p className="text-gray-600 text-sm mb-2">Come say hello at our store</p>
-                          <p className="text-black font-medium">
+                          <p className="text-gray-600 text-xs mb-2">Come say hello at our store</p>
+                          <p className="text-black font-medium text-sm">
                             123 Fashion Street, Style City
                           </p>
                         </div>
