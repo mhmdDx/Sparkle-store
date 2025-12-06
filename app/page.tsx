@@ -73,10 +73,10 @@ export default function Home() {
           const isAtTop = productsSection.scrollTop <= 10
           const isAtBottom = productsSection.scrollTop + productsSection.clientHeight >= productsSection.scrollHeight - 10
 
-          if (deltaY > 150 && isAtBottom) {
+          if (deltaY > 50 && isAtBottom) {
             shouldNavigate = true
             scrollContainer.scrollTo({ left: 2 * containerWidth, behavior: "smooth" })
-          } else if (deltaY < -150 && isAtTop) {
+          } else if (deltaY < -50 && isAtTop) {
             shouldNavigate = true
             scrollContainer.scrollTo({ left: 0 * containerWidth, behavior: "smooth" })
           }
@@ -85,10 +85,10 @@ export default function Home() {
           const isAtTop = aboutSection.scrollTop <= 10
           const isAtBottom = aboutSection.scrollTop + aboutSection.clientHeight >= aboutSection.scrollHeight - 10
 
-          if (deltaY > 200 && isAtBottom) {
+          if (deltaY > 50 && isAtBottom) {
             shouldNavigate = true
             scrollContainer.scrollTo({ left: 3 * containerWidth, behavior: "smooth" })
-          } else if (deltaY < -200 && isAtTop) {
+          } else if (deltaY < -50 && isAtTop) {
             shouldNavigate = true
             scrollContainer.scrollTo({ left: 1 * containerWidth, behavior: "smooth" })
           }
@@ -96,13 +96,13 @@ export default function Home() {
           const contactSection = contactSectionRef.current
           const isAtTop = contactSection.scrollTop <= 10
 
-          if (deltaY < -150 && isAtTop) {
+          if (deltaY < -50 && isAtTop) {
             shouldNavigate = true
             scrollContainer.scrollTo({ left: 2 * containerWidth, behavior: "smooth" })
           }
         } else if (currentSection === 0) {
           // Home section - navigate on vertical swipe
-          if (deltaY > 100) {
+          if (deltaY > 50) {
             shouldNavigate = true
             scrollContainer.scrollTo({ left: 1 * containerWidth, behavior: "smooth" })
           }
