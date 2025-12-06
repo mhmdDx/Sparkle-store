@@ -16,10 +16,16 @@ export function LiquidMetalBackground() {
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden bg-white">
-      {/* Mobile Static Fallback */}
-      <div className="absolute inset-0 block sm:hidden bg-gradient-to-br from-gray-100 via-gray-200 to-gray-400" />
+      {/* Mobile 3D Mesh - Optimized for performance */}
+      <div className="absolute inset-0 w-full h-full sm:hidden">
+        <MeshGradient
+          className="absolute inset-0 w-full h-full"
+          colors={["#ffffff", "#e5e7eb", "#9ca3af", "#6b7280"]}
+          speed={0.2}
+        />
+      </div>
 
-      {/* Desktop 3D Mesh Gradient */}
+      {/* Desktop 3D Mesh - Full quality */}
       <div className="hidden sm:block absolute inset-0 w-full h-full">
         <MeshGradient
           className="absolute inset-0 w-full h-full"
